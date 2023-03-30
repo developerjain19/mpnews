@@ -95,7 +95,7 @@
  <script src="<?= base_url() ?>assets/themes/magazine/js/jquery-3.6.1.min.js "></script>
  <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
  <script src="<?= base_url() ?>assets/themes/magazine/js/plugins.js"></script>
- <script src="<?= base_url() ?>assets/themes/magazine/js/main.min.js"></script>
+ <script src="<?= base_url() ?>assets/themes/magazine/js/muskan.js"></script>
  <script src="<?= base_url() ?>assets/themes/magazine/js/custom.js"></script>
  </body>
 

@@ -50,7 +50,7 @@
 							<a href="javascript:void(0)" onclick="window.open('http://pinterest.com/pin/create/button/?url=<?= current_url() ?>&amp;media=<?= base_url() ?>uploads/images/202303/image_870x_6412cc058b7b8.jpg', 'Share This Post', 'width=640,height=450');return false" class="color-pinterest"><i class="icon-pinterest"></i></a>
 						</div>
 						<div class="btn-share">
-							<a href="javascript:void(0)" onclick="window.open('http://www.tumblr.com/share/link?url=<<?= current_url() ?>title=%E0%A4%AE%E0%A4%A8%E0%A5%80%E0%A4%B7+%E0%A4%B8%E0%A4%BF%E0%A4%B8%E0%A5%8B%E0%A4%A6%E0%A4%BF%E0%A4%AF%E0%A4%BE+%E0%A4%AA%E0%A4%B0+%E0%A4%9C%E0%A4%BE%E0%A4%B8%E0%A5%82%E0%A4%B8%E0%A5%80+%E0%A4%AE%E0%A4%BE%E0%A4%AE%E0%A4%B2%E0%A5%87+%E0%A4%AE%E0%A5%87%E0%A4%82+FIR%2C+%E0%A4%AE%E0%A5%81%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%82%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%80+%E0%A4%95%E0%A5%87%E0%A4%9C%E0%A4%B0%E0%A5%80%E0%A4%B5%E0%A4%BE%E0%A4%B2+%E0%A4%95%E0%A5%87+%E0%A4%B8%E0%A4%B2%E0%A4%BE%E0%A4%B9%E0%A4%95%E0%A4%BE%E0%A4%B0+%E0%A4%95%E0%A4%BE+%E0%A4%AD%E0%A5%80+%E0%A4%A8%E0%A4%BE%E0%A4%AE', 'Share This Post', 'width=640,height=450');return false" class="color-tumblr"><i class="icon-tumblr"></i></a>
+							<a href="javascript:void(0)" onclick="window.open('https://www.tumblr.com/share/link?url=<<?= current_url() ?>title=%E0%A4%AE%E0%A4%A8%E0%A5%80%E0%A4%B7+%E0%A4%B8%E0%A4%BF%E0%A4%B8%E0%A5%8B%E0%A4%A6%E0%A4%BF%E0%A4%AF%E0%A4%BE+%E0%A4%AA%E0%A4%B0+%E0%A4%9C%E0%A4%BE%E0%A4%B8%E0%A5%82%E0%A4%B8%E0%A5%80+%E0%A4%AE%E0%A4%BE%E0%A4%AE%E0%A4%B2%E0%A5%87+%E0%A4%AE%E0%A5%87%E0%A4%82+FIR%2C+%E0%A4%AE%E0%A5%81%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%82%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%80+%E0%A4%95%E0%A5%87%E0%A4%9C%E0%A4%B0%E0%A5%80%E0%A4%B5%E0%A4%BE%E0%A4%B2+%E0%A4%95%E0%A5%87+%E0%A4%B8%E0%A4%B2%E0%A4%BE%E0%A4%B9%E0%A4%95%E0%A4%BE%E0%A4%B0+%E0%A4%95%E0%A4%BE+%E0%A4%AD%E0%A5%80+%E0%A4%A8%E0%A4%BE%E0%A4%AE', 'Share This Post', 'width=640,height=450');return false" class="color-tumblr"><i class="icon-tumblr"></i></a>
 						</div>
 						<div class="btn-share ms-auto">
 							<div class="btn-inner">
@@ -63,7 +63,7 @@
 								</a>
 							</div>
 							<div class="btn-inner">
-								<a href="javascript:void(0)" class="btn-reading-list" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add to Reading List" onclick="addRemoveReadingListItem('123');">
+								<a href="javascript:void(0)" class="btn-reading-list" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add to Reading List" onclick="addRemoveReadingListItem('<?= $posts['post_id']; ?>');">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
 										<path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
 									</svg>
@@ -115,49 +115,49 @@
 					</div>
 					<div class="post-next-prev mt-5">
 						<div class="row">
-						<div class="col-sm-6 col-xs-12 left">
+							<div class="col-sm-6 col-xs-12 left">
 
-                                <?php if (!empty($post_previous)): ?>
-                                    <div class="head-title text-end">
-                                        <a href="<?= $post_previous[0]['title_slug']; ?>">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                                            </svg>
-                                            <?= ("previous_article"); ?>
-                                        </a>
-                                    </div>
-                                    <h3 class="title text-end">
-                                        <a href="<?= $post_previous[0]['title_slug']; ?>"><?= (characterLimiter($post_previous[0]['title'], 80, '...')); ?></a>
-                                    </h3>
-                                <?php endif; ?>
-                            </div>
-                            <div class="col-sm-6 col-xs-12 right">
-                                <?php if (!empty($post_next)): ?>
-                                    <div class="head-title text-start">
-                                        <a href="<?= $post_next[0]['title_slug']; ?>">
-                                            <?= ("next_article"); ?>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <h3 class="title text-start">
-                                        <a href="<?= $post_next[0]['title_slug']; ?>"><?= (characterLimiter($post_next[0]['title'], 80, '...')); ?></a>
-                                    </h3>
-                                <?php endif; ?>
-                            </div>
+								<?php if (!empty($post_previous)) : ?>
+									<div class="head-title text-end">
+										<a href="<?= $post_previous[0]['title_slug']; ?>">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+											</svg>
+											<?= ("previous_article"); ?>
+										</a>
+									</div>
+									<h3 class="title text-end">
+										<a href="<?= $post_previous[0]['title_slug']; ?>"><?= (characterLimiter($post_previous[0]['title'], 80, '...')); ?></a>
+									</h3>
+								<?php endif; ?>
+							</div>
+							<div class="col-sm-6 col-xs-12 right">
+								<?php if (!empty($post_next)) : ?>
+									<div class="head-title text-start">
+										<a href="<?= $post_next[0]['title_slug']; ?>">
+											<?= ("next_article"); ?>
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+											</svg>
+										</a>
+									</div>
+									<h3 class="title text-start">
+										<a href="<?= $post_next[0]['title_slug']; ?>"><?= (characterLimiter($post_next[0]['title'], 80, '...')); ?></a>
+									</h3>
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12 col-xs-12 reactions noselect">
 							<h4 class="title-reactions">What's Your Reaction?</h4>
 							<div id="reactions_result">
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'like');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'like');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/like.png" alt="like" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes like<?= $posts['id']; ?>"><?= (($getreaction != '') ? $getreaction[0]['re_like'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
@@ -167,12 +167,12 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'dislike');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'dislike');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/dislike.png" alt="dislike" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes dislike<?= $posts['id']; ?>"><?= (($getreaction != '') ? $getreaction[0]['re_dislike'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
@@ -182,12 +182,12 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'love');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'love');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/love.png" alt="love" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes love<?= $posts['id']; ?>"><?= (($getreaction != '') ? $getreaction[0]['re_love'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
@@ -197,12 +197,12 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'funny');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'funny');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/funny.png" alt="funny" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes funny<?= $posts['id']; ?>"><?= (($getreaction != '') ? $getreaction[0]['re_funny'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
@@ -212,12 +212,12 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'angry');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'angry');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/angry.png" alt="angry" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes angry<?= $posts['id']; ?>"><?= (($getreaction != '') ? $getreaction[0]['re_angry'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
@@ -227,27 +227,27 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'sad');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'sad');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/sad.png" alt="sad" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes sad<?= $posts['id']; ?>"><?= (($getreaction != '') ? $getreaction[0]['re_sad'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
 											<p class="text-center">
-												<label class="label label-reaction ">Sad</label>
+												<label class="label label-reaction">Sad</label>
 											</p>
 										</div>
 									</div>
 								</div>
-								<div class="col-reaction col-reaction-like" onclick="addReaction('123', 'wow');">
+								<div class="col-reaction col-reaction-like" onclick="addReaction('<?= $posts['id']; ?>', 'wow');">
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="icon-cnt">
 												<img src="<?= base_url() ?>assets/img/reactions/wow.png" alt="wow" class="img-reaction">
-												<label class="label reaction-num-votes">0</label>
+												<label class="label reaction-num-votes wow<?= $posts['id']; ?> "><?= (($getreaction != '') ? $getreaction[0]['re_wow'] : '0')  ?></label>
 											</div>
 										</div>
 										<div class="row">
@@ -261,48 +261,48 @@
 						</div>
 					</div>
 					<div class="d-flex about-author">
-					<div class="d-flex about-author">
-                            <div class="flex-shrink-0">
-                                <a href="<?= base_url('profile/'.$post_author['slug']); ?>" class="author-link">
-                                    <img src="<?= setImage($post_author['avatar'],''); ?>" alt="<?= ($post_author['username']); ?>" class="img-fluid img-author" width="110" height="110">
-                                </a>
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <strong class="username"><a href="<?= base_url('profile/'.$post_author['slug']); ?>"> <?= ($post_author['username']); ?> </a></strong>
-                                <?= ($post_author['about_me']); ?>
-                                <div class="social">
-                                    <ul class="profile-social-links">
-                                        <?php if (!empty($post_author['facebook_url'])): ?>
-                                            <li><a href="<?= ($post_author['facebook_url']); ?>" target="_blank"><i class="icon-facebook"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['twitter_url'])): ?>
-                                            <li><a href="<?= ($post_author['twitter_url']); ?>" target="_blank"><i class="icon-twitter"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['instagram_url'])): ?>
-                                            <li><a href="<?= ($post_author['instagram_url']); ?>" target="_blank"><i class="icon-instagram"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['pinterest_url'])): ?>
-                                            <li><a href="<?= ($post_author['pinterest_url']); ?>" target="_blank"><i class="icon-pinterest"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['linkedin_url'])): ?>
-                                            <li><a href="<?= ($post_author['linkedin_url']); ?>" target="_blank"><i class="icon-linkedin"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['vk_url'])): ?>
-                                            <li><a href="<?= ($post_author['vk_url']); ?>" target="_blank"><i class="icon-vk"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['telegram_url'])): ?>
-                                            <li><a href="<?= ($post_author['telegram_url']); ?>" target="_blank"><i class="icon-telegram"></i></a></li>
-                                        <?php endif;
-                                        if (!empty($post_author['youtube_url'])): ?>
-                                            <li><a href="<?= ($post_author['youtube_url']); ?>" target="_blank"><i class="icon-youtube"></i></a></li>
-                                        <?php endif;
-                                        if ($post_author['show_rss_feeds']): ?>
-                                            <li><a href="<?= base_url('profile/'.$post_author['slug']); ?>"><i class="icon-rss"></i></a></li>
-                                        <?php endif; ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+						<div class="d-flex about-author">
+							<div class="flex-shrink-0">
+								<a href="<?= base_url('profile/' . $post_author['slug']); ?>" class="author-link">
+									<img src="<?= setImage($post_author['avatar'], ''); ?>" alt="<?= ($post_author['username']); ?>" class="img-fluid img-author" width="110" height="110">
+								</a>
+							</div>
+							<div class="flex-grow-1 ms-3">
+								<strong class="username"><a href="<?= base_url('profile/' . $post_author['slug']); ?>"> <?= ($post_author['username']); ?> </a></strong>
+								<?= ($post_author['about_me']); ?>
+								<div class="social">
+									<ul class="profile-social-links">
+										<?php if (!empty($post_author['facebook_url'])) : ?>
+											<li><a href="<?= ($post_author['facebook_url']); ?>" target="_blank"><i class="icon-facebook"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['twitter_url'])) : ?>
+											<li><a href="<?= ($post_author['twitter_url']); ?>" target="_blank"><i class="icon-twitter"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['instagram_url'])) : ?>
+											<li><a href="<?= ($post_author['instagram_url']); ?>" target="_blank"><i class="icon-instagram"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['pinterest_url'])) : ?>
+											<li><a href="<?= ($post_author['pinterest_url']); ?>" target="_blank"><i class="icon-pinterest"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['linkedin_url'])) : ?>
+											<li><a href="<?= ($post_author['linkedin_url']); ?>" target="_blank"><i class="icon-linkedin"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['vk_url'])) : ?>
+											<li><a href="<?= ($post_author['vk_url']); ?>" target="_blank"><i class="icon-vk"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['telegram_url'])) : ?>
+											<li><a href="<?= ($post_author['telegram_url']); ?>" target="_blank"><i class="icon-telegram"></i></a></li>
+										<?php endif;
+										if (!empty($post_author['youtube_url'])) : ?>
+											<li><a href="<?= ($post_author['youtube_url']); ?>" target="_blank"><i class="icon-youtube"></i></a></li>
+										<?php endif;
+										if ($post_author['show_rss_feeds']) : ?>
+											<li><a href="<?= base_url('profile/' . $post_author['slug']); ?>"><i class="icon-rss"></i></a></li>
+										<?php endif; ?>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 					<section class="section section-related-posts mt-5">
 						<div class="row">
@@ -330,7 +330,7 @@
 												</p>
 											</div>
 										</div>
-                                        <?php
+										<?php
 										$i = 0;
 										if (!empty($related)) {
 											foreach ($related as $news_row) {
@@ -375,8 +375,8 @@
 								<div class="tab-content" id="navTabsComment">
 									<div class="tab-pane fade show active" id="navComments" role="tabpanel" aria-labelledby="nav-home-tab">
 										<form id="add_comment_registered">
-											<input type="hidden" name="parent_id" value="0">
-											<input type="hidden" name="post_id" value="123">
+
+											<input type="hidden" name="post_id" value="<?= $posts['post_id']; ?>">
 											<div class="form-group">
 												<textarea name="comment" class="form-control form-input form-textarea" placeholder="Leave your comment..."></textarea>
 											</div>
@@ -390,6 +390,7 @@
 												<div class="col-sm-12">
 													<div class="comments">
 														<ul class="comment-list">
+
 														</ul>
 													</div>
 												</div>

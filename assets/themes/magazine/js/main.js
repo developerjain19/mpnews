@@ -1,4 +1,8 @@
 // Passive event listeners
+
+
+
+const baseUrl = window.location.origin;
 jQuery.event.special.touchstart = {
     setup: function( _, ns, handle ) {
         this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
@@ -329,10 +333,10 @@ function addReaction(postId, reaction) {
         'post_id': postId,
         'reaction': reaction
     };
-    addCsrf(data);
+   
     $.ajax({
         type: 'POST',
-        url: VrConfig.baseURL + '/AjaxController/addReaction',
+        url: VrConfig.baseURL + '/Home/addReaction',
         data: data,
         success: function (response) {
             var obj = JSON.parse(response);
