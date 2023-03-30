@@ -21,7 +21,7 @@
                             </ol>
                         </div>
                     </div>
-                </div
+                </div>
             </section>
 
             <!-- Main content -->

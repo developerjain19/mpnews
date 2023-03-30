@@ -84,6 +84,34 @@ class Home extends CI_Controller
 		}
 		$this->load->view('register', $data);
 	}
+
+	public function login()
+	{
+		if ($this->session->has_userdata('login_user_id')) {
+			redirect(base_url('Welcome/profile'));
+		}
+
+		$data['category'] = $this->CommonModal->getAllRows('categories');
+		$data['popular'] =  $this->CommonModal->getAllRowsLimitByOrder('posts', 8, 'id', 'DESC');
+
+		if (count($_POST) > 0) {
+			$post = $this->input->post();
+			if ($post['password'] == $post['confirm_password']) {
+				$post['password'] = encryptId($post['password']);
+				$regid = $this->CommonModal->insertRowReturnId('users', $post);
+				if (!empty($regid)) {
+					userData('msg', '<h6 style="color:green;">You have registered successfully.</h6>');
+				} else {
+					userData('msg', '<h6 style="color:green;">You have registered successfully. check mail ID to get your password.</h6>');
+				}
+			} else {
+				userData('msg', '<h6 style="color:green;">Password dont match</h6>');
+			}
+			redirect('/register');
+		} else {
+		}
+		$this->load->view('register', $data);
+	}
 	public function news_details($url)
 	{
 		$data['posts'] =  $this->CommonModal->getSingleRowById('posts', array('title_slug' => $url));

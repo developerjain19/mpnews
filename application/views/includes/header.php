@@ -10,6 +10,21 @@
                 <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
                     <li class="nav-item display-flex align-items-center"><a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a><span class="span-login-sep">&nbsp;/&nbsp;</span><a href="register" class="nav-link">Register</a>
                     </li>
+                    <li class="dropdown profile-dropdown">
+                        <a class="dropdown-toggle a-profile" data-toggle="dropdown" href="#" aria-expanded="false">
+                            <img src="<?= base_url() ?>assets/img/user.png" alt="sagar">
+                            test@email.com
+                            <!-- <span class="icon-arrow-down"></span> -->
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href=""><i class="icon-dashboard"></i><?= trans("dashboard"); ?></a></li>
+                            <li><a href=""><i class="icon-user"></i><?= trans("profile"); ?></a></li>
+                            <li><a href=""><i class="icon-star-o"></i><?= trans("reading_list"); ?></a></li>
+                            <li><a href=""><i class="icon-settings"></i><?= trans("settings"); ?></a></li>
+                            <li><a href="" class="logout"><i class="icon-logout-thin"></i><?= trans("logout"); ?></a></li>
+                        </ul>
+                    </li>
                     <!-- <li class="nav-item display-flex align-items-center m0">
                         <form action="switch-dark-mode" method="post">
                             <input type="hidden" name="app_csrf_token" value="52a883505c6b269b11f6375e43507042" /><input type="hidden" name="back_url" value="">
@@ -102,7 +117,7 @@
                                                     <?php
                                                     if (!empty($news_limit)) {
                                                         foreach ($news_limit as $news_row) {
-                                                            $author = getSingleRowById('users',array('id'=>$news_row['user_id']));
+                                                            $author = getSingleRowById('users', array('id' => $news_row['user_id']));
                                                     ?>
                                                             <div class="col-sm-2 menu-post-item width20">
                                                                 <div class="image">
@@ -247,12 +262,12 @@
                 </div>
                 <div class="modal-body">
                     <div id="result-login"></div>
-                    <form id="form-login">
+                    <form id="form-login" method="POST">
                         <div class="mb-2">
-                            <input type="email" name="email" class="form-control form-input input-account" placeholder="Email" value="" required>
+                            <input type="email" name="email" class="form-control form-input input-account" placeholder="Email" required>
                         </div>
                         <div class="mb-2">
-                            <input type="password" name="password" class="form-control form-input input-account" placeholder="Password" value="" required>
+                            <input type="password" name="password" class="form-control form-input input-account" placeholder="Password" required>
                         </div>
                         <div class="mb-4 text-end">
                             <a href="forgot-password" class="link-forget">Forgot Password?</a>
