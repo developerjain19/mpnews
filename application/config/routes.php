@@ -20,6 +20,8 @@ $route['add-subcategory'] = 'Admin_Dashboard/add_subcategory';
 $route['edit-subcategory/(:any)'] = 'Admin_Dashboard/edit_subcategory/$1';
 $route['edit-post/(:any)'] = 'POSTController/editPost/$1';
 $route['general-settings'] = 'Admin_Dashboard/general_settings';
+$route['settings'] = 'Admin_Dashboard/settings';
+$route['change-password'] = 'Admin_Dashboard/changepassword';
 // --------------Website------------------
 
 $route['contact'] = 'Home/contact';

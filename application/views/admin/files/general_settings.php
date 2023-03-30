@@ -37,7 +37,7 @@
                             endif; ?>
 
 
-                            <form action="" method="post"  enctype='multipart/form-data'>
+                            <form action="" method="post" enctype='multipart/form-data'>
                                 <div class="box-body">
                                     <!-- <div class="form-group">
                                         <label>Project Name</label>
@@ -50,14 +50,14 @@
                                         <img class="image1" src="<?= base_url() . $setting[0]['logo'] ?>" height="50" />
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label">Logo</label>
+                                        <label class="control-label">Logo Footer</label>
                                         <input type="hidden" class="form-control " name="logo_footer" value="<?= $setting[0]['logo_footer'] ?>">
                                         <input type="file" class="form-control myfile-input" data-value="2" name="logo_footer_temp" accept="image/png, image/jpg, image/jpeg">
                                         <img class="image2" src="<?= base_url() . $setting[0]['logo_footer'] ?>" height="50" />
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label">Logo</label>
+                                        <label class="control-label">Logo Favicon</label>
                                         <input type="hidden" class="form-control " name="favicon" value="<?= $setting[0]['favicon'] ?>">
                                         <input type="file" class="form-control myfile-input" data-value="3" name="favicon_temp" accept="image/png, image/jpg, image/jpeg">
                                         <img class="image3" src="<?= base_url() . $setting[0]['favicon'] ?>" height="50" />

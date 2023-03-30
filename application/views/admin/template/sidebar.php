@@ -89,12 +89,20 @@
           </ul>
         </li>
 
-        
+
 
         <li class="nav-item">
-              <a href="<?= base_url('general-settings'); ?>"  class="nav-link">
-              <i class="nav-icon  fa fa-cogs"></i><p> <?= trans("general_settings"); ?></p></a>
-            </li>
+          <a href="<?= base_url('general-settings'); ?>" class="nav-link">
+            <i class="nav-icon  fa fa-cogs"></i>
+            <p> <?= trans("general_settings"); ?></p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= base_url('settings'); ?>" class="nav-link">
+            <i class="nav-icon  fa fa-cogs"></i>
+            <p> <?= trans("Settings"); ?></p>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

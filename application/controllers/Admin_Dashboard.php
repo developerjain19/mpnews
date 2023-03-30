@@ -195,14 +195,62 @@ class Admin_Dashboard extends CI_Controller
 
             $savedata = $this->CommonModal->updateRowById('general_settings', 'id', '1', $post);
             if ($savedata) {
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Sub-Category Add Successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Logos Updated Successfully</div>');
             } else {
-                $this->session->set_userdata('msg', '<div class="alert alert-success">Sub-Category Add Successfully</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Logos Updated Successfully</div>');
             }
             redirect('general-settings');
         } else {
 
             $this->load->view('admin/files/general_settings', $data);
+        }
+    }
+
+    public function settings()
+    {
+        $data['title'] = "Settings";
+        $data['favicon'] = base_url() . 'assets/images/favicon.png';
+        $data['setting'] = $this->CommonModal->getRowById('settings', 'id', '1');
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            $savedata = $this->CommonModal->updateRowById('settings', 'id', '1', $post);
+            if ($savedata) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Settings Updated Successfully</div>');
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">Settings Updated Successfully</div>');
+            }
+            redirect('settings');
+        } else {
+
+            $this->load->view('admin/files/settings', $data);
+        }
+    }
+    public function changepassword()
+    {
+        $data['title'] = "Change Password";
+        $data['favicon'] = base_url() . 'assets/images/favicon.png';
+        $exist = $this->CommonModal->getRowById('users', 'id', sessionId('id'));
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            if ($post['old_password'] == $exist[0]['password']) {
+                if ($post['new_password'] == $post['c_new_password']) {
+                    $mydata = array('password' => $post['new_password']);
+                    unset($post['c_new_password']);
+                    $savedata = $this->CommonModal->updateRowById('users', 'id', sessionId('id'), $mydata);
+                    if ($savedata) {
+                        $this->session->set_userdata('msg', '<div class="alert alert-success">Password Changed Successfully</div>');
+                    }
+                    redirect(base_url() . 'change-password');
+                } else {
+                    $this->session->set_userdata('msg', '<div class="alert alert-danger">The Confirm Password field does not match the Password field.</div>');
+                }
+            } else {
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">Wrong Old Password</div>');
+            }
+            redirect(base_url() . 'change-password');
+        } else {
+
+            $this->load->view('admin/files/change-password', $data);
         }
     }
 }
