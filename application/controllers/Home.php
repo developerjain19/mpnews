@@ -21,8 +21,6 @@ class Home extends CI_Controller
 	public function index()
 	{
 
-
-
 		$data['title'] = "Welcome To";
 		$data['category'] = $this->CommonModal->getAllRows('categories');
 		$data['breaking'] = $this->CommonModal->getRowByIdInOrder('posts', array('is_breaking' => '0'), 'id', 'DESC');
@@ -120,6 +118,9 @@ class Home extends CI_Controller
 		$data['post_images'] =  $this->CommonModal->getRowById('post_images', 'post_id', $data['posts']['id']);
 		$data['post_tags'] =  $this->CommonModal->getRowById('tags', 'post_id', $data['posts']['id']);
 		$data['post_previous'] =  $this->CommonModal->runQuery("SELECT * FROM `posts` WHERE `id` < " . $data['posts']['id'] . " LIMIT 1");
+
+		$data['getreaction'] =  $this->CommonModal->getRowById('reactions', 'post_id', $data['posts']['id']);
+
 		$data['post_next'] =  $this->CommonModal->runQuery("SELECT * FROM `posts` WHERE `id` > " . $data['posts']['id'] . " LIMIT 1");
 
 		$data['details'] = "1";
@@ -153,5 +154,35 @@ class Home extends CI_Controller
 		$data['popular'] =  $this->CommonModal->getAllRowsLimitByOrder('posts', 8, 'id', 'DESC');
 
 		$this->load->view('news_listing', $data);
+	}
+
+	public function addReaction()
+	{
+		$postId = $this->input->post('post_id');
+		$reaction = $this->input->post('reaction');
+		$getreaction =  $this->CommonModal->getRowById('reactions', 'post_id', $postId);
+
+
+		$re = 're_' . $reaction;
+		if ($getreaction != '') {
+
+			$addiiton = $getreaction[0][$re] + 1;
+			updateRowById('reactions', 'post_id', $postId, array($re  => $addiiton));
+
+			echo $addiiton;
+		} else {
+			$data = [
+				'post_id' => $postId,
+				're_like' => 0,
+				're_dislike' => 0,
+				're_love' => 0,
+				're_funny' => 0,
+				're_angry' => 0,
+				're_sad' => 0,
+				're_wow' => 0
+			];
+			$this->CommonModal->insertRow('reactions', $data);
+			echo $addiiton = 1;
+		}
 	}
 }

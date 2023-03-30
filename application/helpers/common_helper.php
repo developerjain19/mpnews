@@ -810,3 +810,10 @@ function characterLimiter($str, $limit, $endChar = '')
 	}
 	return $str;
 }
+
+function translate($from_lan, $to_lan, $text)
+{
+	$json = json_decode(file_get_contents("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" . $from_lan . "&tl=" . $to_lan . "&dt=t&q=" . urlencode($text)), true);
+
+	return strtolower($json[0][0][0]);
+}
