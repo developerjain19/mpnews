@@ -61,6 +61,12 @@ class Admin_Dashboard extends CI_Controller
 
         if (count($_POST) > 0) {
             $post = $this->input->post();
+
+            if ($this->input->post('name_slug') != '') {
+                $post['name_slug'] = translate(url_title($this->input->post('name_slug')));
+            } else {
+                $post['name_slug'] = translate(url_title($this->input->post('name')));
+            }
             $savedata = $this->Dashboard_model->insertdata('categories', $post);
             if ($savedata) {
                 $this->session->set_userdata('msg', '<div class="alert alert-success">Category Add Successfully</div>');
@@ -122,6 +128,12 @@ class Admin_Dashboard extends CI_Controller
 
         if (count($_POST) > 0) {
             $post = $this->input->post();
+
+            if ($this->input->post('name_slug') != '') {
+                $post['name_slug'] = translate(url_title($this->input->post('name_slug')));
+            } else {
+                $post['name_slug'] = translate(url_title($this->input->post('name')));
+            }
             $savedata = $this->Dashboard_model->insertdata('categories', $post);
             if ($savedata) {
                 $this->session->set_userdata('msg', '<div class="alert alert-success">Sub-Category Add Successfully</div>');

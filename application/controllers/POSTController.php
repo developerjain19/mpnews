@@ -30,7 +30,12 @@ class POSTController extends CI_Controller
         if (count($_POST) > 0) {
 
             $title = $this->input->post('title');
-            $title_slug = url_title($this->input->post('title_slug'));
+
+            if ($this->input->post('title_slug') != '') {
+                $title_slug = translate(url_title($this->input->post('title_slug')));
+            } else {
+                $title_slug = translate(url_title($this->input->post('title')));
+            }
             $summary = $this->input->post('summary');
             $keywords = $this->input->post('keywords');
             $optional_url = $this->input->post('optional_url');
