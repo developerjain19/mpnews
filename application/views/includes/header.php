@@ -3,38 +3,45 @@
         <div class="container d-flex justify-content-center justify-content-between">
             <div class="d-flex align-items-center">
                 <ul class="navbar-nav flex-row top-left">
-                    <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="<?= base_url() ?>contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
             <div class="d-flex align-items-center">
                 <ul class="navbar-nav flex-row flex-wrap ms-md-auto align-items-center">
-                    <li class="nav-item display-flex align-items-center"><a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a><span class="span-login-sep">&nbsp;/&nbsp;</span><a href="register" class="nav-link">Register</a>
-                    </li>
-                    <li class="dropdown profile-dropdown">
-                        <a class="dropdown-toggle a-profile" data-toggle="dropdown" href="#" aria-expanded="false">
-                            <img src="<?= base_url() ?>assets/img/user.png" alt="sagar">
-                            test@email.com
-                            <!-- <span class="icon-arrow-down"></span> -->
-                        </a>
-                        <ul class="dropdown-menu">
 
-                            <li><a href=""><i class="icon-dashboard"></i><?= trans("dashboard"); ?></a></li>
-                            <li><a href=""><i class="icon-user"></i><?= trans("profile"); ?></a></li>
-                            <li><a href=""><i class="icon-star-o"></i><?= trans("reading_list"); ?></a></li>
-                            <li><a href=""><i class="icon-settings"></i><?= trans("settings"); ?></a></li>
-                            <li><a href="" class="logout"><i class="icon-logout-thin"></i><?= trans("logout"); ?></a></li>
-                        </ul>
-                    </li>
-                    <!-- <li class="nav-item display-flex align-items-center m0">
-                        <form action="switch-dark-mode" method="post">
-                            <input type="hidden" name="app_csrf_token" value="52a883505c6b269b11f6375e43507042" /><input type="hidden" name="back_url" value="">
-                            <button type="submit" name="theme_mode" value="dark" class="btn-switch-mode" aria-label="switch-mode">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="dark-mode-icon" viewBox="0 0 16 16">
-                                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-                                </svg>
-                            </button>
-                        </form>
-                    </li> -->
+                    <?php if (sessionId('id') == '') { ?>
+                        <li class="nav-item display-flex align-items-center"><a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a><span class="span-login-sep">&nbsp;/&nbsp;</span>
+                        <a href="<?= base_url('register') ?>" class="nav-link">Register</a>
+                        </li>
+                    <?php
+                    } else { ?>
+
+                        <li class="nav-item display-flex align-items-center"><a href="<?= base_url('post-format') ?>" class="nav-link">Post</a>
+                        </li>
+
+                        <li class="dropdown profile-dropdown">
+                            <a class="dropdown-toggle a-profile" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <img src="<?= base_url() ?>assets/img/user.png" alt="<?= sessionId('username') ?>">
+                                <?= sessionId('email') ?>
+                                <!-- <span class="icon-arrow-down"></span> -->
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="<?= base_url('dashboard') ?>" target="_blank"><i class="icon-dashboard"></i><?= trans("dashboard"); ?></a></li>
+
+                                <li><a href="<?= base_url('profile' . '/' . encryptId(sessionId('id')) . '/' . sessionId('userslug')) ?>"><i class="icon-user"></i><?= trans("profile"); ?></a></li>
+
+                                <!-- <li><a href="<?= base_url('dashboard') ?>"><i class="icon-star-o"></i><?= trans("reading_list"); ?></a></li> -->
+
+                                <li><a href="<?= base_url() ?>profileSetting/<?= sessionId('userslug') ?>"><i class="icon-settings"></i><?= trans("settings"); ?></a></li>
+
+                                <li><a href="<?= base_url('logout') ?>" class="logout"><i class="icon-logout-thin"></i><?= trans("logout"); ?></a></li>
+                            </ul>
+                        </li>
+
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -122,7 +129,7 @@
                                                             <div class="col-sm-2 menu-post-item width20">
                                                                 <div class="image">
                                                                     <a href="<?= base_url($news_row['title_slug']); ?>">
-                                                                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="<?= $news_row['image_mid']; ?>" alt="<?= $news_row['title']; ?>" class="img-fluid lazyload" width="232" height="140" />
+                                                                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="<?= base_url() ?><?= $news_row['image_mid']; ?>" alt="<?= $news_row['title']; ?>" class="img-fluid lazyload" width="232" height="140" />
                                                                     </a>
                                                                 </div>
                                                                 <h3 class="title"><a href="<?= base_url($news_row['title_slug']); ?>"><?= $news_row['title']; ?></a></h3>
@@ -262,7 +269,7 @@
                 </div>
                 <div class="modal-body">
                     <div id="result-login"></div>
-                    <form id="form-login" method="POST">
+                    <form method="POST" id="push-login">
                         <div class="mb-2">
                             <input type="email" name="email" class="form-control form-input input-account" placeholder="Email" required>
                         </div>
@@ -273,7 +280,7 @@
                             <a href="forgot-password" class="link-forget">Forgot Password?</a>
                         </div>
                         <div class="form-group m-t-15 m-b-0">
-                            <button type="submit" class="btn btn-account btn-custom">Login</button>
+                            <button type="button" class="btn btn-account btn-custom" onclick="pushlogin()">Login</button>
                         </div>
                     </form>
                 </div>
@@ -299,7 +306,7 @@
                         <input type="text" name="url">
                         <div id="modal_newsletter_response" class="text-center modal-newsletter-response">
                             <div class="form-group text-center m-b-0 text-close">
-                                <button type="button" class="text-close" data-dismiss="modal">No, thanks</button>
+                                <button type="submit" class="text-close" data-dismiss="modal">No, thanks</button>
                             </div>
                         </div>
                     </form>

@@ -11,6 +11,8 @@ class POSTController extends CI_Controller
             redirect(base_url('admin'));
         }
         date_default_timezone_set("Asia/Kolkata");
+        $setting  =  $this->CommonModal->getRowById('settings', 'id', '1');
+        $this->site_title  = $setting[0]['site_title'];
     }
 
 
@@ -300,10 +302,70 @@ class POSTController extends CI_Controller
 
     public function viewposts()
     {
-        $data['title'] = "Post | Admin Mp Online News";
-        $data['posts'] = $this->CommonModal->getAllRowsInOrder('posts', 'id', 'desc');
+        $data['title'] = "Post";
+
+        if (count($_GET) > 0) {
+            $post_type = $this->input->get('post_type');
+            $category = $this->input->get('category');
+            $q = $this->input->get('q');
+            $query = fetch_get_data($post_type, $category,  $q, "'status' = '0' ");
+
+            $data['posts'] = $this->CommonModal->runQuery($query);
+        } else {
+            $data['posts'] = $this->CommonModal->getAllRowsInOrder('posts', 'id', 'desc');
+        }
         $this->load->view('admin/post/viewposts', $data);
     }
+
+    // public function pending_posts()
+    // {
+    //     $data['title'] = "pending posts";
+    //     if (count($_GET) > 0) {
+    //         $post_type = $this->input->get('post_type');
+    //         $category = $this->input->get('category');
+    //         $q = $this->input->get('q');
+    //         $query = fetch_get_data($post_type, $category,  $q, "'status' = '0' ");
+
+    //         $data['posts'] = $this->CommonModal->runQuery($query);
+    //     } else {
+    //         $data['posts'] = $this->CommonModal->getAllRowsInOrder('posts', 'id', 'desc');
+    //     }
+    //     $this->load->view('admin/post/viewposts', $data);
+    // }
+
+    public function scheduled_posts()
+    {
+        $data['title'] = "Post";
+        if (count($_GET) > 0) {
+            $post_type = $this->input->get('post_type');
+            $category = $this->input->get('category');
+            $q = $this->input->get('q');
+            $query = fetch_get_data($post_type, $category,  $q, "'is_scheduled' = '1' ");
+
+            $data['posts'] = $this->CommonModal->runQuery($query);
+        } else {
+            $data['posts'] = $this->CommonModal->getRowByIdInOrder('posts', array('is_scheduled' => '1'), 'id', 'desc');
+        }
+        $this->load->view('admin/post/viewposts', $data);
+    }
+
+    public function drafts()
+    {
+        $data['title'] = "Post";
+        if (count($_GET) > 0) {
+            $post_type = $this->input->get('post_type');
+            $category = $this->input->get('category');
+            $q = $this->input->get('q');
+            $query = fetch_get_data($post_type, $category,  $q, "'status' = '0' ");
+
+            $data['posts'] = $this->CommonModal->runQuery($query);
+        } else {
+            $data['posts'] = $this->CommonModal->getRowByIdInOrder('posts', array('status' => '0'), 'id', 'desc');
+        }
+
+        $this->load->view('admin/post/viewposts', $data);
+    }
+
 
     public function get_subcategory()
     {
@@ -330,5 +392,22 @@ class POSTController extends CI_Controller
         unlink($filename);
         $this->CommonModal->deleteRowById('post_files', array('file_id' => $id));
         $this->CommonModal->deleteRowById('files', array('id' => $id));
+    }
+
+    public function user_posts($id)
+    {
+        $id = decryptId($id);
+        $data['title'] = "User Posts";
+        if (count($_GET) > 0) {
+            $post_type = $this->input->get('post_type');
+            $category = $this->input->get('category');
+            $q = $this->input->get('q');
+            $query = fetch_get_data($post_type, $category,  $q, "'user_id' =  $id ");
+
+            $data['posts'] = $this->CommonModal->runQuery($query);
+        } else {
+            $data['posts'] = $this->CommonModal->getRowByIdInOrder('posts',  array('user_id' => $id), 'id', 'desc');
+        }
+        $this->load->view('admin/post/viewposts', $data);
     }
 }
