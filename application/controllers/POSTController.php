@@ -125,7 +125,11 @@ class POSTController extends CI_Controller
         $data['title'] = $title;
         $data['postType'] = $type;
 
-        $this->load->view('admin/post/add-post', $data);
+        if ($type === 'article') {
+            $this->load->view('admin/post/add-post', $data);
+        } else if ($type === 'gallery') {
+            $this->load->view('admin/post/add-gallery', $data);
+        }
     }
 
 

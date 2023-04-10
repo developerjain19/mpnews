@@ -5208,8 +5208,9 @@ a:focus,
 
 .profile-dropdown .dropdown-menu {
     position: absolute;
-    
+
 }
+
 .profile-dropdown:hover .dropdown-menu {
     display: block !important;
 }
@@ -5220,3 +5221,4 @@ a:focus,
     width: 100%;
     display: inline-block;
 }
+
