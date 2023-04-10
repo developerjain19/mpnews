@@ -16,7 +16,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard</li>
               </ol>
             </div><!-- /.col -->
@@ -32,9 +32,9 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3><?=  $allpost ?></h3>
 
-                  <p>Posts</p>
+                  <p>ALL Posts</p>
                 </div>
               
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
@@ -60,7 +60,7 @@
                 <div class="inner">
                   <h3>44</h3>
 
-                  <p>Drafts</p>
+                  <p>Drafts Post</p>
                 </div>
                
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
@@ -79,7 +79,49 @@
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <!-- ./col -->
+        
+
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>53</h3>
+
+                  <p>Users</p>
+                </div>
+               
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>53</h3>
+
+                  <p>Pending Posts</p>
+                </div>
+               
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+
+
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>53</h3>
+
+                  <p>Pending Posts</p>
+                </div>
+               
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
           </div>
         
       </section>

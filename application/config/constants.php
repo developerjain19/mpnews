@@ -85,6 +85,6 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 define('PROJECT_NAME', 'Loans Support');
 define('PROJECT_LINK', 'https://www.loanssupport.co.in/');
-
+define('PROJECT_EMAIL', 'info@loanssupport.co.in');
 // defined('LOGO','uploads/logo/favicon_63e664f059edf8-93925454-58792982.jpeg');
 // defined('SHORTCUT_LOGO','uploads/logo/favicon_63e664f059edf8-93925454-58792982.jpeg');

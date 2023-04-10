@@ -1,3 +1,13 @@
+<?php
+
+$host = $_SERVER['REMOTE_ADDR'];
+$agent = $_SERVER['HTTP_USER_AGENT'];
+insertRow('post_pageviews_month', array('post_id' => $posts['id'], 'post_user_id' => ((sessionId('id') != '') ? sessionId('id') : '0'), 'ip_address' => $host, 'user_agent' => $agent));
+$comment = getNumRows('comments', array('post_id ' => $posts['id'], 'status' => '0'));
+$views = getNumRows('post_pageviews_month', array('post_id ' => $posts['id']));
+?>
+
+
 <?php $this->load->view('includes/header-link') ?>
 <?php $this->load->view('includes/header') ?>
 
@@ -19,7 +29,7 @@
 					<h1 class="post-title"><?= $posts['title'] ?></h1>
 					<div class="d-flex align-items-center post-details-meta mb-4">
 						<div class="item-meta item-meta-author">
-							<a href="<?= base_url() ?>profile/<?= $post_author['slug'] ?>"><img src="<?= base_url() ?>assets/img/user.png" alt="<?= $post_author['username'] ?>" width="32" height="32"><span><?= $post_author['username'] ?></span></a>
+							<a href="<?= base_url('profile' . '/' . encryptId($post_author['id']) . '/' . $post_author['slug']) ?>"><img src="<?= base_url() ?>assets/img/user.png" alt="<?= $post_author['username'] ?>" width="32" height="32"><span><?= $post_author['username'] ?></span></a>
 						</div>
 						<div class="item-meta item-meta-date">
 							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
@@ -29,8 +39,8 @@
 							<span><?= convertDatedmy($posts['created_at']) ?></span>
 						</div>
 						<div class="ms-auto item-meta item-meta-comment">
-							<span><i class="icon-comment"></i>&nbsp;0</span>
-							<span> <i class="icon-eye"></i>&nbsp;2</span>
+							<span><i class="icon-comment"></i>&nbsp;<?= $comment ?></span>
+							<span> <i class="icon-eye"></i>&nbsp;<?= $views ?></span>
 						</div>
 					</div>
 					<div class="d-flex post-share-buttons mb-4">
@@ -314,22 +324,7 @@
 								</div>
 								<div class="section-content">
 									<div class="row">
-										<div class="col-sm-12 col-md-6 col-lg-4">
-											<div class="post-item">
-												<div class="image ratio">
-													<a href="<?= base_url() ?>the-businessman-was-shot-dead-the-workers-informed-the-police-in-the-morning">
-														<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAEYAQMAAAD1c2RPAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAACVJREFUaN7twQEBAAAAgqD+r26IwAAAAAAAAAAAAAAAAAAAACDoP3AAASZRMyIAAAAASUVORK5CYII=" data-src="<?= base_url() ?>uploads/images/202302/image_430x256_63f4ae1a902c6.jpg" alt="व्यवसायी की गोली मारकर हत्या कर दी गई, सुबह मजदूरों ने पुलिस को दी सूचना" class="img-fluid lazyload" width="269" height="160" />
-													</a>
-												</div>
-												<h3 class="title fsize-16"><a href="<?= base_url() ?>the-businessman-was-shot-dead-the-workers-informed-the-police-in-the-morning">व्यवसायी
-														की गोली मारकर हत्या कर दी गई, सुबह मजदूरों ने ...</a></h3>
-												<p class="small-post-meta"> <a href="<?= base_url() ?>profile/nikita-kapse" class="a-username">Nikita Kapse</a>
-													<span>Feb 21, 2023</span>
-													<span><i class="icon-comment"></i>&nbsp;0</span>
-													<span class="m-r-0"><i class="icon-eye"></i>&nbsp;1</span>
-												</p>
-											</div>
-										</div>
+										
 										<?php
 										$i = 0;
 										if (!empty($related)) {
@@ -374,24 +369,40 @@
 								</div>
 								<div class="tab-content" id="navTabsComment">
 									<div class="tab-pane fade show active" id="navComments" role="tabpanel" aria-labelledby="nav-home-tab">
-										<form id="add_comment_registered">
+										<form method="POST" enctype="multipart/form-data" id="push-comment">
 
-											<input type="hidden" name="post_id" value="<?= $posts['post_id']; ?>">
+											<input type="hidden" name="post_id" value="<?= $posts['id']; ?>">
+
+											<?php if (sessionId('id')) { ?>
+
+												<input type="hidden" name="user_id" value="<?= sessionId('id') ?>">
+											<?php	} else { ?>
+												<div class="row">
+													<div class="form-group col-md-6">
+														<label>Name</label>
+														<input type="text" name="name" class="form-control form-input" maxlength="40" placeholder="Name">
+													</div>
+													<div class="form-group col-md-6">
+														<label>Email</label>
+														<input type="email" name="email" class="form-control form-input" maxlength="100" placeholder="Email">
+													</div>
+												</div>
+											<?php
+											}
+											?>
+
 											<div class="form-group">
-												<textarea name="comment" class="form-control form-input form-textarea" placeholder="Leave your comment..."></textarea>
+												<input name="comment" class="form-control comment-field form-textarea" placeholder="Leave your comment..." rows="6" required />
 											</div>
-											<button type="submit" class="btn btn-md btn-custom">Post
+											<button type="submit" class="btn btn-md btn-custom" onclick="pushcomment()" id="submit-comment">Post
 												Comment</button>
 										</form>
 										<div id="message-comment-result" class="message-comment-result"></div>
 										<div id="comment-result">
-											<input type="hidden" value="5" id="post_comment_limit">
 											<div class="row">
 												<div class="col-sm-12">
 													<div class="comments">
-														<ul class="comment-list">
 
-														</ul>
 													</div>
 												</div>
 											</div>
@@ -403,127 +414,10 @@
 					</section>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-4">
-				<div class="col-sidebar sticky-lg-top">
-					<div class="row">
-						<div class="col-12">
-							<div class="sidebar-widget">
-								<div class="widget-head">
-									<h4 class="title">Popular Posts</h4>
-								</div>
-								<div class="widget-body">
-									<div class="row">
-										<?php
-										if (!empty($popular)) {
-											foreach ($popular as $row) {
-												$category_row = getSingleRowById('categories', array('id' => $row['category_id']));
-												$author = getSingleRowById('users', array('id' => $row['user_id']));
 
-										?>
-												<div class="col-12">
-													<div class="tbl-container post-item-small">
-														<div class="tbl-cell left">
-															<div class="image">
-																<a href="<?= base_url($row['title_slug']) ?>">
-																	<img src="<?= $row['image_mid'] ?>" alt="<?= $row['title'] ?>" class="img-fluid lazyload" width="130" height="91" />
-																</a>
-															</div>
-														</div>
-														<div class="tbl-cell right">
-															<h3 class="title"><a href="<?= base_url($row['title_slug']) ?>"><?= $row['title'] ?></a></h3>
-															<p class="small-post-meta"> <a href="profile/<?= $author['slug'] ?>" class="a-username"><?= $author['username'] ?></a>
-																<span><?= convertDatedmy($row['created_at']); ?></span>
-																<span><i class="icon-comment"></i>&nbsp;0</span>
-																<span class="m-r-0"><i class="icon-eye"></i>&nbsp;37</span>
-															</p>
-														</div>
-													</div>
-												</div>
-										<?php
-											}
-										}
-										?>
-									</div>
-								</div>
-							</div>
-							<div class="sidebar-widget">
-								<div class="widget-head">
-									<h4 class="title">Follow Us</h4>
-								</div>
-								<div class="widget-body">
-									<div class="row gx-3 widget-follow">
-										<div class="col-sm-3 col-md-6 item"><a class="color-facebook" href="https://www.facebook.com/mponlinenews" target="_blank"><i class="icon-facebook"></i><span>Facebook</span></a></div>
-										<div class="col-sm-3 col-md-6 item"><a class="color-twitter" href="https://twitter.com/mponlinenews201?lang=en" target="_blank"><i class="icon-twitter"></i><span>Twitter</span></a>
-										</div>
-										<div class="col-sm-3 col-md-6 item"><a class="color-instagram" href="https://www.instagram.com/mponlinenews2013/" target="_blank"><i class="icon-instagram"></i><span>Instagram</span></a></div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="sidebar-widget">
-								<div class="widget-head">
-									<h4 class="title">Recommended Posts</h4>
-								</div>
-								<div class="widget-body">
-									<div class="row">
-									</div>
-								</div>
-							</div> -->
-							<div class="sidebar-widget">
-								<div class="widget-head">
-									<h4 class="title">Popular Tags</h4>
-								</div>
-								<div class="widget-body">
-									<ul class="tag-list">
-										<li><a href="tag/हरियाणा">हरियाणा</a></li>
-										<li><a href="tag/delhi">delhi</a></li>
-										<li><a href="tag/bhopal">bhopal</a></li>
-										<li><a href="tag/दिल्ली">दिल्ली</a></li>
-										<li><a href="tag/राजस्थान">राजस्थान</a></li>
-										<li><a href="tag/उत्तराखंड">उत्तराखंड</a></li>
-										<li><a href="tag/haryana">haryana</a></li>
-										<li><a href="tag/शिवराज-सिंह-चौहान">शिवराज सिंह चौहान</a></li>
-										<li><a href="tag/road-accident">road accident</a></li>
-										<li><a href="tag/कुबेरेश्वर-धाम">कुबेरेश्वर धाम</a></li>
-										<li><a href="tag/सुप्रीम-कोर्ट">सुप्रीम कोर्ट</a></li>
-										<li><a href="tag/महाशिवरात्रि">महाशिवरात्रि</a></li>
-										<li><a href="tag/उज्जैन">उज्जैन</a></li>
-										<li><a href="tag/मुख्यमंत्री-शिवराज-सिंह-चौहान">मुख्यमंत्री शिवराज सिंह
-												चौहान</a></li>
-										<li><a href="tag/madhya-pradesh">madhya pradesh</a></li>
-									</ul>
-								</div>
-							</div>
-							<!-- <div class="sidebar-widget">
-								<div class="widget-head">
-									<h4 class="title">Voting Poll</h4>
-								</div>
-								<div class="widget-body">
-								</div>
-							</div> -->
-						</div>
-						<!-- <div class="col-12">
-							<div class="container container-bn container-bn-ds mb-4">
-								<div class="row">
-									<div class="bn-content bn-sidebar-content">
-										<div class="bn-inner bn-ds-2">
-											<a href="" aria-label="link-bn"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?= base_url() ?>uploads/blocks/block_63e67278ed32d6-27827231-83854469.jpg" width="336" height="280" alt="" class="lazyload"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="container container-bn container-bn-ds mb-4">
-								<div class="row">
-									<div class="bn-content bn-sidebar-content">
-										<div class="bn-inner bn-ds-9">
-											<a href="" aria-label="link-bn"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?= base_url() ?>uploads/blocks/block_63e6725d1db5d3-09428104-62312839.jpg" width="336" height="280" alt="" class="lazyload"></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
-					</div>
-				</div>
-			</div>
+			<?php $this->load->view('common/common-sidebar'); ?>
+
+
 		</div>
 	</div>
 </section>

@@ -12,11 +12,26 @@ class Admin_Dashboard extends CI_Controller
             redirect(base_url('admin'));
         }
         date_default_timezone_set("Asia/Kolkata");
+        $setting  =  $this->CommonModal->getRowById('settings', 'id', '1');
+        $this->site_title  = $setting[0]['site_title'];
     }
 
     public function index()
     {
         $data['title'] = "Home";
+
+        $data['category'] = $this->CommonModal->getNumRow('category');
+      if(sessionId('role') =='admin'){
+        $data['allpost'] = $this->CommonModal->getNumRow('posts');
+      }
+      else
+      {
+        $data['allpost'] = $this->CommonModal->getNumRows('posts', array('user_id' => sessionId('id')));
+
+      }
+
+
+      
         $this->load->view('admin/dashboard', $data);
     }
 
@@ -237,32 +252,74 @@ class Admin_Dashboard extends CI_Controller
             $this->load->view('admin/files/settings', $data);
         }
     }
-    public function changepassword()
+
+
+    public function comments()
     {
-        $data['title'] = "Change Password";
+        $data['title'] = "Comments";
         $data['favicon'] = base_url() . 'assets/images/favicon.png';
-        $exist = $this->CommonModal->getRowById('users', 'id', sessionId('id'));
+
+        $BdID = $this->input->get('BdID');
+        if (decryptId($BdID) != '') {
+            $delete = $this->CommonModal->deleteRowById('comments', array('id' => decryptId($BdID)));
+            redirect('comments');
+            exit;
+        }
+        $type = $this->input->get('type');
+        if ($type == 'pending') {
+            $data['comment'] = $this->CommonModal->getRowByIdInOrder('comments', array('status' => '1'), 'id', 'DESC');
+        } else {
+            $data['comment'] = $this->CommonModal->getAllRowsInOrder('comments', 'id', 'DESC');
+        }
+        $this->load->view('admin/files/comments', $data);
+    }
+
+    public function comments_approve()
+    {
+
         if (count($_POST) > 0) {
             $post = $this->input->post();
-            if ($post['old_password'] == $exist[0]['password']) {
-                if ($post['new_password'] == $post['c_new_password']) {
-                    $mydata = array('password' => $post['new_password']);
-                    unset($post['c_new_password']);
-                    $savedata = $this->CommonModal->updateRowById('users', 'id', sessionId('id'), $mydata);
-                    if ($savedata) {
-                        $this->session->set_userdata('msg', '<div class="alert alert-success">Password Changed Successfully</div>');
-                    }
-                    redirect(base_url() . 'change-password');
-                } else {
-                    $this->session->set_userdata('msg', '<div class="alert alert-danger">The Confirm Password field does not match the Password field.</div>');
-                }
+            $savedata = $this->CommonModal->updateRowById('comments', 'id', $post['id'], array('status' => '0'));
+            if ($savedata) {
+                $this->session->set_userdata('msg', '<div class="alert alert-success">comments Approved Successfully</div>');
             } else {
-                $this->session->set_userdata('msg', '<div class="alert alert-danger">Wrong Old Password</div>');
+                $this->session->set_userdata('msg', '<div class="alert alert-danger">comments Approved Failed</div>');
             }
-            redirect(base_url() . 'change-password');
-        } else {
-
-            $this->load->view('admin/files/change-password', $data);
+            redirect('comments');
         }
+    }
+
+
+    public function contact_query()
+    {
+        $data['title'] = "contact_query";
+        $data['favicon'] = base_url() . 'assets/images/favicon.png';
+
+        $BdID = $this->input->get('BdID');
+        if (decryptId($BdID) != '') {
+            $delete = $this->CommonModal->deleteRowById('contacts', array('id' => decryptId($BdID)));
+            redirect('contact-query');
+            exit;
+        }
+
+        $data['contcat'] = $this->CommonModal->getAllRowsInOrder('contacts', 'id', 'DESC');
+
+        $this->load->view('admin/files/contact_query', $data);
+    }
+
+
+    public function user_list()
+    {
+        $data['title'] = "User List";
+        $data['favicon'] = base_url() . 'assets/images/favicon.png';
+
+        if (count($_POST) > 0) {
+            $post = $this->input->post();
+            $savedata = $this->CommonModal->updateRowById('comments', 'id', $post['id'], array('status' => $post['status']));
+            redirect('user-list');
+        }
+
+        $data['user'] = $this->CommonModal->getAllRowsInOrder('users', 'id', 'DESC');
+        $this->load->view('admin/users/user-list', $data);
     }
 }

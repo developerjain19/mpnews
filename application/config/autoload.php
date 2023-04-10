@@ -7,7 +7,7 @@ $autoload['libraries'] = array('email', 'database', 'session', 'table', 'upload'
 
 $autoload['drivers'] = array();
 
-$autoload['helper'] = array('url', 'common_helper', 'form', 'html', 'date' , 'security');
+$autoload['helper'] = array('url', 'common_helper', 'mail_helper',  'form', 'html', 'date' , 'security' , 'post');
 
 $autoload['config'] = array();
 

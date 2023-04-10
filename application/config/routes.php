@@ -21,13 +21,29 @@ $route['edit-subcategory/(:any)'] = 'Admin_Dashboard/edit_subcategory/$1';
 $route['edit-post/(:any)'] = 'POSTController/editPost/$1';
 $route['general-settings'] = 'Admin_Dashboard/general_settings';
 $route['settings'] = 'Admin_Dashboard/settings';
-$route['change-password'] = 'Admin_Dashboard/changepassword';
-// --------------Website------------------
+
+$route['comments'] = 'Admin_Dashboard/comments';
+$route['contact-query'] = 'Admin_Dashboard/contact_query';
+$route['scheduled-posts'] = 'Admin_Dashboard/scheduled_posts';
+$route['drafts'] = 'Admin_Dashboard/drafts';
+$route['user-posts/(:any)'] = 'POSTController/user_posts/$1';
+
+
+$route['user-list'] = 'Admin_Dashboard/user_list';
+$route['user-post/(:any)'] = 'POSTController/user_posts/$1';
+
+// --------------Website------------------ //
 
 $route['contact'] = 'Home/contact';
 $route['register'] = 'Home/register';
-$route['profile'] = 'Home/profile';
+$route['profile/(:any)/(:any)'] = 'Home/profile/$1/$2';
+$route['social-accounts'] = 'Home/socialAccounts';
 $route['terms-conditions'] = 'Home/policy/1';
 $route['news/(:any)'] = 'Home/category/$1';
+$route['profile/(:any)/(:any)'] = 'Home/profile/$1/$2';
 $route['tags/(:any)'] = 'Home/tags/$1';
+$route['change-password'] = 'Home/changepassword';
+$route['new_password/(:any)'] = 'Home/new_password/$1';
+$route['forgot-password'] = 'Home/forgot_password';
+$route['profileSetting/(:any)'] = 'Home/profileSetting/$1';
 $route['(:any)'] = 'Home/news_details/$1';

@@ -122,12 +122,7 @@
                                             <input type="text" class="form-control" name="telegram_url" placeholder="Telegram Url" value="<?= $setting[0]['telegram_url'] ?>" maxlength="200">
                                         </div>
                                     </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label class="control-label">Telegram Url</label>
-                                            <input type="text" class="form-control" name="telegram_url" placeholder="Telegram Url" value="<?= $setting[0]['telegram_url'] ?>" maxlength="200">
-                                        </div>
-                                    </div>
+                                   
                                     <div class="col-lg-4">
                                         <div class="form-group">
                                             <label class="control-label">Youtube Url</label>

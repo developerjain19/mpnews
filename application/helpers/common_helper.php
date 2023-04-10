@@ -820,3 +820,18 @@ function translate($text)
 
 	return strtolower($json[0][0][0]);
 }
+
+function mailmsg($to, $subject, $message)
+{
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+	$headers .= 'From: '.PROJECT_EMAIL."\r\n";
+	$headers .= 'Cc: '. $to . "\r\n";
+
+	$send = mail($to, $subject, $message, $headers);
+}
+
+
+
+

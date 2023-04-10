@@ -2,7 +2,7 @@
   <!-- Brand Logo -->
   <a href="<?= base_url('admin') ?>" class="brand-link">
     <!-- <img src="<?= base_url('uploads/logo/logo.jpeg') ?>" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8"> -->
-    <span class="brand-text font-weight-light">MP Online News</span>
+    <span class="brand-text font-weight-light"><?= $this->site_title ?></span>
   </a>
 
   <!-- Sidebar -->
@@ -67,20 +67,20 @@
                 <p>Posts</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="<?= base_url() ?>view-posts" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Pending Posts</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
-              <a href="<?= base_url() ?>view-posts" class="nav-link">
+              <a href="<?= base_url() ?>scheduled-posts" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Scheduled Posts</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url() ?>view-posts" class="nav-link">
+              <a href="<?= base_url() ?>drafts    " class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Drafts</p>
               </a>
@@ -89,20 +89,92 @@
           </ul>
         </li>
 
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-user"></i>
+            <p>
+              User Details
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('user-list'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p> <?= trans("user list"); ?></p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url() ?>settings" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p><?= trans("Settings"); ?></p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
 
 
         <li class="nav-item">
-          <a href="<?= base_url('general-settings'); ?>" class="nav-link">
-            <i class="nav-icon  fa fa-cogs"></i>
-            <p> <?= trans("general_settings"); ?></p>
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-comment"></i>
+            <p>
+              Comments
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('comments'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p> All Comments</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url() ?>comments?type=pending" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p> Pending Comments</p>
+              </a>
+            </li>
+          </ul>
         </li>
+
+
+
+
         <li class="nav-item">
-          <a href="<?= base_url('settings'); ?>" class="nav-link">
-            <i class="nav-icon  fa fa-cogs"></i>
-            <p> <?= trans("Settings"); ?></p>
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-cogs"></i>
+            <p>
+              Setting
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= base_url('general-settings'); ?>" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p> <?= trans("general_settings"); ?></p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url() ?>settings" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p><?= trans("Settings"); ?></p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?= base_url('contact-query') ?>" class="nav-link">
+            <i class="nav-icon far fa-envelope"></i>
+            <p>
+              Contact
+            </p>
           </a>
         </li>
+
       </ul>
     </nav>
   </div>

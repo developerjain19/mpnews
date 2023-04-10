@@ -43,8 +43,57 @@
                                 <?php
                                     $this->session->unset_userdata('msg');
                                 endif; ?>
-
                                 <div class="card-body">
+
+
+
+                                    <form method="get" class="mb-2">
+                                        <div class="row">
+
+                                            <div class="col-sm-2">
+                                                <label>Post Type</label>
+                                                <select name="post_type" class="form-control">
+                                                    <option value="">All</option>
+                                                    <option value="article">Article</option>
+                                                    <option value="gallery">Gallery</option>
+                                                    <option value="sorted_list">Sorted List</option>
+                                                    <option value="trivia_quiz">Trivia Quiz</option>
+                                                    <option value="personality_quiz">Personality Quiz</option>
+                                                    <option value="video">Video</option>
+                                                    <option value="audio">Audio</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label>Category</label>
+                                                <select id="categories" name="category" class="form-control" onchange="getSubCategories(this.value);">
+                                                    <option value="">All</option>
+                                                    <?php $cate =  getAllRow('categories');
+                                                    $i = 0;
+                                                    if (!empty($cate)) {
+                                                        foreach ($cate as $category_row) {  ?>
+
+                                                            <option value="<?= $category_row['id']; ?>"><?= $category_row['name']; ?></option>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label>Search</label>
+                                                <input name="q" class="form-control" placeholder="Search" type="search" value="">
+                                            </div>
+                                            <div class="col-sm-2 md-top-10" style="width: 65px; min-width: 65px;">
+                                                <label style="display: block">&nbsp;</label>
+                                                <button type="submit" class="btn bg-purple">Filter</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>

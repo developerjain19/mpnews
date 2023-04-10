@@ -63,10 +63,11 @@
                      </div>
                      <div class="footer-social-links">
                          <ul>
-                             <li><a class="facebook" href="https://www.facebook.com/mponlinenews" target="_blank" aria-label="facebook"><i class="icon-facebook"></i></a></li>
-                             <li><a class="twitter" href="https://twitter.com/mponlinenews201?lang=en" target="_blank" aria-label="twitter"><i class="icon-twitter"></i></a></li>
-                             <li><a class="instagram" href="https://www.instagram.com/mponlinenews2013/" target="_blank" aria-label="instagram"><i class="icon-instagram"></i></a></li>
-                             <li><a class="rss" href="rss-feeds" aria-label="rss"><i class="icon-rss"></i></a></li>
+                             <li><a class="facebook" href="<?= $this->facebook ?>" target="_blank" aria-label="facebook"><i class="icon-facebook"></i></a></li>
+                             <li><a class="twitter" href="<?= $this->twitter ?>" target="_blank" aria-label="twitter"><i class="icon-twitter"></i></a></li>
+                             <li><a class="instagram" href="<?= $this->instagram ?>" target="_blank" aria-label="instagram"><i class="icon-instagram"></i></a></li>
+                             <li><a class="linkedin" href="<?= $this->linkedin ?>" target="_blank" aria-label="linkedin"><i class="icon-linkedin"></i></a></li>
+
                          </ul>
                      </div>
                  </div>
@@ -78,7 +79,7 @@
              <div class="row align-items-center">
                  <div class="col-sm-12 col-md-6">
                      <div class="copyright text-start">
-                         Copyright 2023 Mp Online News - All Rights Reserved. </div>
+                         <?= $this->copyright ?> </div>
                  </div>
                  <div class="col-sm-12 col-md-6">
                      <div class="nav-footer text-end">
@@ -92,11 +93,53 @@
      </div>
  </footer>
  <a href="#" class="scrollup"><i class="icon-arrow-up"></i></a>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
  <script src="<?= base_url() ?>assets/themes/magazine/js/jquery-3.6.1.min.js "></script>
  <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
  <script src="<?= base_url() ?>assets/themes/magazine/js/plugins.js"></script>
- <script src="<?= base_url() ?>assets/themes/magazine/js/muskan.js"></script>
  <script src="<?= base_url() ?>assets/themes/magazine/js/custom.js"></script>
+ <script src="<?= base_url() ?>assets/themes/magazine/js/muskan.js"  defer></script>
+
+ <script>
+     $(document).ready(function() {
+         $(".nav-main .nav-item-category").hover(
+             function() {
+                 var categoryId = $(this).attr("data-category-id");
+                 $(".mega-menu").css("display", "none");
+                 $(".mega-menu .link-sub-category").removeClass("active");
+                 $(".mega-menu .menu-category-items").removeClass("active");
+                 $(".mega-menu .link-sub-category-all").addClass("active");
+                 $(".mega-menu .menu-right .filter-all").addClass("active");
+                 $(".mega-menu-" + categoryId).css("display", "flex");
+             },
+             function() {
+                 $(".mega-menu").css("display", "none");
+             }
+         );
+         $(".mega-menu").hover(
+             function() {
+                 $(this).css("display", "flex");
+                 var categoryId = $(this).attr("data-category-id");
+                 $(".nav-main .nav-item-category-" + categoryId).addClass("active");
+             },
+             function() {
+                 $(".mega-menu").css("display", "none");
+                 $(".nav-main .nav-item-category").removeClass("active");
+             }
+         );
+         $(".mega-menu .link-sub-category").hover(
+             function() {
+                 var filter = $(this).attr("data-category-filter");
+                 $(".mega-menu .link-sub-category").removeClass("active");
+                 $(this).addClass("active");
+                 $(".mega-menu .menu-category-items").removeClass("active");
+                 $(".mega-menu .menu-right .filter-" + filter).addClass("active");
+             },
+             function() {}
+         );
+     });
+ </script>
+
  </body>
 
  </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2023 at 08:16 AM
+-- Generation Time: Apr 10, 2023 at 01:59 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -16335,6 +16335,14 @@ CREATE TABLE `comments` (
   `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `parent_id`, `post_id`, `user_id`, `email`, `name`, `comment`, `ip_address`, `like_count`, `status`, `created_at`) VALUES
+(18, 0, 54, 1, NULL, NULL, 'i like this post', NULL, 0, 0, '2023-04-04 12:24:10'),
+(19, 0, 16, NULL, 'asd@fadd.com', 'asd', 'asdasdsadsa', '127.0.0.1', 0, 1, '2023-04-07 06:45:59');
+
 -- --------------------------------------------------------
 
 --
@@ -16375,14 +16383,12 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `message`, `created_at`) VALUES
 (19, NULL, NULL, NULL, '2023-02-17 06:45:29'),
 (20, 'MJXkLatvhQwsCgub', 'rutduyuzec@outlook.com', 'NLIKFkHjfWBVMl', '2023-02-17 06:46:10'),
 (21, 'muaiCLKYywEpVSc', 'rutduyuzec@outlook.com', 'ESKIjdQkYmLb', '2023-02-17 06:46:11'),
-(22, NULL, NULL, NULL, '2023-02-17 06:46:12'),
-(23, 'MasnaLpal', 'masnalegirtoper@bk.ru', 'Доброго времени суток, мы производим отделочные работы в кабинете для сеансов лечения пиявками. Скажите, пожалуйста какая [url=http://rasfokus.ru/alemigun]расценки механизированной полусухой стяжки  и стоимость  Бетонный пол для постройки из каркаса лстк?[/url]  Какую толщину полусухой стяжки пола возможно делать в помещении? Каким образом рассчитать стройматериалы?  Cтяжка пола  (полусухая)  имеет нижеследующие преимущества и минусы: \r\nДостоинства \r\nПолусухая стяжка монтируется на любые разновидности чернового пола, повышая при этом термо-, водо- и шумоизоляцию пространства. Среди основных преимуществ: \r\nповышенная прочность \r\nнизкая цена материалов, перекрывающая затраты на наем бригады мастеров \r\nхороший вариант замаскировать под полом проводку \r\nвозможность монтажа теплых полов \r\nНедостатки \r\nНедостатки полусухой стяжки пола: Сложность ручного замешивания. При нем невозможно достичь необходимой консистенции раствора из-за его низкой текучести. Поэтому необходимо специализированное оборудование. Надобность класть большой слой смеси. Это связано с рыхлой структурой и низкой плотностью сухой смеси. Кстати, по работе надо много ездить. Поэтому вот вам лайфхак: очень хорошо экономить топливо позволяют бензиновые карты. Надеюсь будет полезно. Уменьшение операций по земельным участкам. Из-за сокращения спроса на жилье и спроса на землю под новые проекты застройщики начали осторожнее подходить к приобретению земли под строительство, что уже привело к снижению по результатам прошедшего периода договоров в данном сегменте на 15-20 %. Вкладываться в приобретение площадок могут в основном застройщики, повысившие прибыль на фоне сенсационных реализаций, и местные игроки. Но их стоимостные ожидания нередко расходятся со стоимостью предложения, объясняют специалисты. На этом фоне объем вложений в участки в этом году останется небольшим.', '2023-02-19 13:02:58'),
 (24, 'Eric Jones', 'ericjonesmyemail@gmail.com', 'Dear mponlinenews.com Administrator. my name’s Eric and I just ran across your website at mponlinenews.com...\r\n\r\nI found it after a quick search, so your SEO’s working out…\r\n\r\nContent looks pretty good…\r\n\r\nOne thing’s missing though…\r\n\r\nA QUICK, EASY way to connect with you NOW.\r\n\r\nBecause studies show that a web lead like me will only hang out a few seconds – 7 out of 10 disappear almost instantly, Surf Surf Surf… then gone forever.\r\n\r\nI have the solution:\r\n\r\nWeb Visitors Into Leads is a software widget that’s works on your site, ready to capture any visitor’s Name, Email address and Phone Number.  You’ll know immediately they’re interested and you can call them directly to TALK with them - literally while they’re still on the web looking at your site.\r\n\r\nCLICK HERE https://advanceleadgeneration.com to try out a Live Demo with Web Visitors Into Leads now to see exactly how it works and even give it a try… it could be huge for your business.\r\n\r\nPlus, now that you’ve got that phone number, with our new SMS Text With Lead feature, you can automatically start a text (SMS) conversation pronto… which is so powerful, because connecting with someone within the first 5 minutes is 100 times more effective than waiting 30 minutes or more later.\r\n\r\nThe new text messaging feature lets you follow up regularly with new offers, content links, even just follow up notes to build a relationship.\r\n\r\nEverything I’ve just described is extremely simple to implement, cost-effective, and profitable.\r\n \r\nCLICK HERE https://advanceleadgeneration.com to discover what Web Visitors Into Leads can do for your business, potentially converting up to 100X more eyeballs into leads today!\r\n\r\nEric\r\nPS: Web Visitors Into Leads offers a FREE 14 days trial – and it even includes International Long Distance Calling. \r\nYou have customers waiting to talk with you right now… don’t keep them waiting. \r\nCLICK HERE https://advanceleadgeneration.com to try Web Visitors Into Leads now.\r\n\r\nIf you\'d like to unsubscribe click here http://advanceleadgeneration.com/unsubscribe.aspx?d=mponlinenews.com', '2023-02-19 13:53:01'),
 (25, 'Eric Jones', 'ericjonesmyemail@gmail.com', 'Hi mponlinenews.com Admin! I just found your site, quick question…\r\n\r\nMy name’s Eric, I found mponlinenews.com after doing a quick search – you showed up near the top of the rankings, so whatever you’re doing for SEO, looks like it’s working well.\r\n\r\nSo here’s my question – what happens AFTER someone lands on your site?  Anything?\r\n\r\nResearch tells us at least 70% of the people who find your site, after a quick once-over, they disappear… forever.\r\n\r\nThat means that all the work and effort you put into getting them to show up, goes down the tubes.\r\n\r\nWhy would you want all that good work – and the great site you’ve built – go to waste?\r\n\r\nBecause the odds are they’ll just skip over calling or even grabbing their phone, leaving you high and dry.\r\n\r\nBut here’s a thought… what if you could make it super-simple for someone to raise their hand, say, “okay, let’s talk” without requiring them to even pull their cell phone from their pocket?\r\n  \r\nYou can – thanks to revolutionary new software that can literally make that first call happen NOW.\r\n\r\nWeb Visitors Into Leads is a software widget that sits on your site, ready and waiting to capture any visitor’s Name, Email address and Phone Number.  It lets you know IMMEDIATELY – so that you can talk to that lead while they’re still there at your site.\r\n  \r\nYou know, strike when the iron’s hot!\r\n\r\nCLICK HERE https://advanceleadgeneration.com to try out a Live Demo with Web Visitors Into Leads now to see exactly how it works.\r\n\r\nWhen targeting leads, you HAVE to act fast – the difference between contacting someone within 5 minutes versus 30 minutes later is huge – like 100 times better!\r\n\r\nThat’s why you should check out our new SMS Text With Lead feature as well… once you’ve captured the phone number of the website visitor, you can automatically kick off a text message (SMS) conversation with them. \r\n \r\nImagine how powerful this could be – even if they don’t take you up on your offer immediately, you can stay in touch with them using text messages to make new offers, provide links to great content, and build your credibility.\r\n\r\nJust this alone could be a game changer to make your website even more effective.\r\n\r\nStrike when  the iron’s hot!\r\n\r\nCLICK HERE https://advanceleadgeneration.com to learn more about everything Web Visitors Into Leads can do for your business – you’ll be amazed.\r\n\r\nThanks and keep up the great work!\r\n\r\nEric\r\nPS: Web Visitors Into Leads offers a FREE 14 days trial – you could be converting up to 100x more leads immediately!   \r\nIt even includes International Long Distance Calling. \r\nStop wasting money chasing eyeballs that don’t turn into paying customers. \r\nCLICK HERE https://advanceleadgeneration.com to try Web Visitors Into Leads now.\r\n\r\nIf you\'d like to unsubscribe click here http://advanceleadgeneration.com/unsubscribe.aspx?d=mponlinenews.com', '2023-02-19 20:20:20'),
 (26, 'Lavonda', 'lavonda@mponlinenews.com', 'New Multifunction Waterproof Backpack\r\n\r\nThe best ever SUPER Backpack: Drop-proof/Scratch-resistant/USB Charging/Large capacity storage\r\n\r\n50% OFF for the next 24 Hours ONLY + FREE Worldwide Shipping for a LIMITED time\r\n\r\nBuy now: https://thebackpack.co\r\n\r\nMany Thanks, \r\n\r\nLavonda', '2023-02-20 09:36:55'),
 (27, 'Merlepounc', 'Frata@fuel.nedmr.com', 'I would like to thanks you representing the efforts youve got produced in book this post. I am hoping the literal unaltered most https://googles7.com', '2023-02-20 11:35:01'),
 (28, 'JamesDwedo', 'leutiphasubg1983@yahoo.com', 'https://dragon-money-casino.bitbucket.io/', '2023-02-20 12:40:54'),
-(29, 'Josephjag', 'fkktuwgb@gradpol.tk', 'Hi! [url=http://sildalisxm.top/]over the counter erectile dysfunction pills[/url] best over the counter ed pills', '2023-02-20 15:23:34');
+(30, 'Muskan jain', 'muskan@gmail.com', 'kjs asjas  adskjasd jasd as ', '2023-04-07 09:02:28');
 
 -- --------------------------------------------------------
 
@@ -16417,6 +16423,13 @@ CREATE TABLE `followers` (
   `following_id` int(11) DEFAULT NULL,
   `follower_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `followers`
+--
+
+INSERT INTO `followers` (`id`, `following_id`, `follower_id`) VALUES
+(1, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -18012,7 +18025,33 @@ INSERT INTO `post_pageviews_month` (`id`, `post_id`, `post_user_id`, `ip_address
 (86, 51, 2, '35.209.47.2', 'Buck/2.3.2; (+https://app.hypefactors.com/media-monitoring/about.html)', 0, '2023-02-19 16:26:46'),
 (87, 50, 2, '35.209.47.2', 'Buck/2.3.2; (+https://app.hypefactors.com/media-monitoring/about.html)', 0, '2023-02-19 16:27:16'),
 (88, 52, 2, '35.209.47.2', 'Buck/2.3.2; (+https://app.hypefactors.com/media-monitoring/about.html)', 0, '2023-02-19 16:27:47'),
-(89, 54, 2, '216.218.141.227', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36', 0, '2023-02-20 07:35:22');
+(89, 54, 2, '216.218.141.227', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36', 0, '2023-02-20 07:35:22'),
+(90, 18, 1, 'localhost', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 11:43:18'),
+(91, 55, 1, 'localhost', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 11:46:41'),
+(92, 55, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 12:08:59'),
+(93, 54, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 12:24:00'),
+(94, 54, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 12:37:26'),
+(95, 54, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 13:03:08'),
+(96, 54, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-04 13:03:38'),
+(97, 55, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-05 07:34:54'),
+(98, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:45:47'),
+(99, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:47:07'),
+(100, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:47:51'),
+(101, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:48:58'),
+(102, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:49:03'),
+(103, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:49:07'),
+(104, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:49:30'),
+(105, 16, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 06:54:26'),
+(106, 50, 0, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0', 0, '2023-04-07 07:17:25'),
+(107, 50, 0, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-07 09:52:10'),
+(108, 50, 1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-07 18:56:04'),
+(109, 11, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-07 19:40:47'),
+(110, 11, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-07 19:40:56'),
+(111, 11, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-07 19:45:51'),
+(112, 11, 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-07 19:46:43'),
+(113, 55, 0, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-08 07:23:17'),
+(114, 55, 0, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-08 07:23:22'),
+(115, 55, 0, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36', 0, '2023-04-08 07:23:28');
 
 -- --------------------------------------------------------
 
@@ -18122,61 +18161,9 @@ CREATE TABLE `reactions` (
 --
 
 INSERT INTO `reactions` (`id`, `post_id`, `re_like`, `re_dislike`, `re_love`, `re_funny`, `re_angry`, `re_sad`, `re_wow`) VALUES
-(1, 1, 0, 0, 0, 0, 0, 0, 0),
-(2, 2, 0, 0, 0, 0, 0, 0, 0),
-(3, 3, 0, 0, 0, 0, 0, 0, 0),
-(4, 4, 0, 0, 0, 0, 0, 0, 0),
-(5, 8, 0, 0, 0, 0, 0, 0, 0),
-(6, 7, 0, 0, 0, 0, 0, 0, 0),
-(7, 6, 0, 0, 0, 0, 0, 0, 0),
-(8, 5, 0, 0, 0, 0, 0, 0, 0),
-(9, 10, 0, 0, 0, 0, 0, 0, 0),
-(10, 9, 0, 0, 0, 0, 0, 0, 0),
-(11, 11, 0, 0, 0, 0, 0, 0, 0),
-(12, 12, 0, 0, 0, 0, 0, 0, 0),
-(13, 14, 0, 0, 0, 0, 0, 0, 0),
-(14, 15, 0, 0, 0, 0, 0, 0, 0),
-(15, 13, 0, 0, 0, 0, 0, 0, 0),
-(16, 16, 0, 0, 0, 0, 0, 0, 0),
-(17, 17, 0, 0, 0, 0, 0, 0, 0),
-(18, 18, 0, 0, 0, 0, 0, 0, 0),
-(19, 19, 0, 0, 0, 0, 0, 0, 0),
-(20, 20, 0, 0, 0, 0, 0, 0, 0),
-(21, 21, 0, 0, 0, 0, 0, 0, 0),
-(22, 22, 0, 0, 0, 0, 0, 0, 0),
-(23, 23, 0, 0, 0, 0, 0, 0, 0),
-(24, 31, 0, 0, 0, 0, 0, 0, 0),
-(25, 28, 0, 0, 0, 0, 0, 0, 0),
-(26, 29, 0, 0, 0, 0, 0, 0, 0),
-(27, 32, 0, 0, 0, 0, 0, 0, 0),
-(28, 24, 0, 0, 0, 0, 0, 0, 0),
-(29, 27, 0, 0, 0, 0, 0, 0, 0),
-(30, 26, 0, 0, 0, 0, 0, 0, 0),
-(31, 25, 0, 0, 0, 0, 0, 0, 0),
-(32, 30, 0, 0, 0, 0, 0, 0, 0),
-(33, 36, 0, 0, 0, 0, 0, 0, 0),
-(34, 34, 0, 0, 0, 0, 0, 0, 0),
-(35, 37, 0, 0, 0, 0, 0, 0, 0),
-(36, 33, 0, 0, 0, 0, 0, 0, 0),
-(37, 38, 0, 0, 0, 0, 0, 0, 0),
-(38, 35, 0, 0, 0, 0, 0, 0, 0),
-(39, 39, 0, 0, 0, 0, 0, 0, 0),
-(40, 40, 0, 0, 0, 0, 0, 0, 0),
-(41, 43, 0, 0, 0, 0, 0, 0, 0),
-(42, 42, 0, 0, 0, 0, 0, 0, 0),
-(43, 41, 0, 0, 0, 0, 0, 0, 0),
-(44, 44, 0, 0, 0, 0, 0, 0, 0),
-(45, 45, 0, 0, 0, 0, 0, 0, 0),
-(46, 46, 0, 0, 0, 0, 0, 0, 0),
-(47, 47, 0, 0, 0, 0, 0, 0, 0),
-(48, 48, 0, 0, 0, 0, 0, 0, 0),
-(49, 49, 0, 0, 0, 0, 0, 0, 0),
-(50, 50, 0, 0, 0, 0, 0, 0, 0),
-(51, 51, 0, 0, 0, 0, 0, 0, 0),
-(52, 52, 0, 0, 0, 0, 0, 0, 0),
-(53, 53, 0, 0, 0, 0, 0, 0, 0),
-(54, 54, 0, 0, 0, 0, 0, 0, 0),
-(55, 55, 0, 0, 0, 0, 0, 0, 0);
+(56, 55, 0, 2, 1, 1, 8, 1, 0),
+(57, 54, 0, 0, 0, 0, 1, 2, 0),
+(58, 31, 0, 0, 0, 3, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -18332,7 +18319,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `lang_id`, `site_title`, `home_title`, `site_description`, `keywords`, `application_name`, `primary_font`, `secondary_font`, `tertiary_font`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `vk_url`, `telegram_url`, `youtube_url`, `optional_url_button_name`, `about_footer`, `contact_text`, `contact_address`, `contact_email`, `contact_phone`, `copyright`, `cookies_warning`, `cookies_warning_text`) VALUES
-(1, 1, 'Loans Support', 'Loans Support', 'Loans Support', 'LoansSupport', 'Loans Support', 20, 10, 34, 'https://www.facebook.com/loanssupport', 'https://twitter.com/loanssupport?lang=en', 'https://www.instagram.com/loanssupport/', NULL, NULL, NULL, NULL, NULL, 'Click Here To See More', NULL, NULL, NULL, NULL, '7000027065', 'Copyright 2023 Mp Online News - All Rights Reserved.', 1, '<p>This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.</p>');
+(1, 1, 'Loans Support', 'Loans Support', '', 'LoansSupport', 'Loans Support', 20, 10, 34, 'https://www.facebook.com/loanssupport', 'https://twitter.com/loanssupport?lang=en', 'https://www.instagram.com/loanssupport/', '', '', '', '', '', 'Click Here To See More', NULL, NULL, '', '', '7000027065', 'Copyright 2023 Mp Online News - All Rights Reserved.', 1, '<p>This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies.</p>');
 
 -- --------------------------------------------------------
 
@@ -18673,71 +18660,7 @@ INSERT INTO `tags` (`id`, `post_id`, `tag`, `tag_slug`) VALUES
 (328, 55, 'passenger', 'passenger'),
 (329, 55, 'Travel', 'travel'),
 (330, 55, 'Indian Railway', 'indian-railway'),
-(343, 68, 'storage ', 'storage'),
-(344, 68, ' ashdjk', 'ashdjk'),
-(345, 68, ' asjdhaskd', 'asjdhaskd'),
-(346, 68, ' kasdhjask', 'kasdhjask'),
-(347, 69, 'storage ', 'storage'),
-(348, 69, ' ashdjk', 'ashdjk'),
-(349, 69, ' asjdhaskd', 'asjdhaskd'),
-(350, 69, ' kasdhjask', 'kasdhjask'),
-(351, 70, 'storage ', 'storage'),
-(352, 70, ' ashdjk', 'ashdjk'),
-(353, 70, ' asjdhaskd', 'asjdhaskd'),
-(354, 70, ' kasdhjask', 'kasdhjask'),
-(355, 71, 'storage ', 'storage'),
-(356, 71, ' ashdjk', 'ashdjk'),
-(357, 71, ' asjdhaskd', 'asjdhaskd'),
-(358, 71, ' kasdhjask', 'kasdhjask'),
-(359, 72, 'storage ', 'storage'),
-(360, 72, ' ashdjk', 'ashdjk'),
-(361, 72, ' asjdhaskd', 'asjdhaskd'),
-(362, 72, ' kasdhjask', 'kasdhjask'),
-(363, 73, 'storage ', 'storage'),
-(364, 73, ' ashdjk', 'ashdjk'),
-(365, 73, ' asjdhaskd', 'asjdhaskd'),
-(366, 73, ' kasdhjask', 'kasdhjask'),
-(367, 74, 'storage ', 'storage'),
-(368, 74, ' ashdjk', 'ashdjk'),
-(369, 74, ' asjdhaskd', 'asjdhaskd'),
-(370, 74, ' kasdhjask', 'kasdhjask'),
-(371, 75, 'storage ', 'storage'),
-(372, 75, ' ashdjk', 'ashdjk'),
-(373, 75, ' asjdhaskd', 'asjdhaskd'),
-(374, 75, ' kasdhjask', 'kasdhjask'),
-(375, 76, 'storage ', 'storage'),
-(376, 76, ' ashdjk', 'ashdjk'),
-(377, 76, ' asjdhaskd', 'asjdhaskd'),
-(378, 76, ' kasdhjask', 'kasdhjask'),
-(379, 77, 'storage ', 'storage'),
-(380, 77, ' ashdjk', 'ashdjk'),
-(381, 77, ' asjdhaskd', 'asjdhaskd'),
-(382, 77, ' kasdhjask', 'kasdhjask'),
-(383, 78, 'storage ', 'storage'),
-(384, 78, ' ashdjk', 'ashdjk'),
-(385, 78, ' asjdhaskd', 'asjdhaskd'),
-(386, 78, ' kasdhjask', 'kasdhjask'),
-(387, 79, 'storage ', 'storage'),
-(388, 79, ' ashdjk', 'ashdjk'),
-(389, 79, ' asjdhaskd', 'asjdhaskd'),
-(390, 79, ' kasdhjask', 'kasdhjask'),
-(391, 80, 'storage ', 'storage'),
-(392, 80, ' ashdjk', 'ashdjk'),
-(393, 80, ' asjdhaskd', 'asjdhaskd'),
-(394, 80, ' kasdhjask', 'kasdhjask'),
-(395, 81, 'storage ', 'storage'),
-(396, 81, ' ashdjk', 'ashdjk'),
-(397, 81, ' asjdhaskd', 'asjdhaskd'),
-(398, 81, ' kasdhjask', 'kasdhjask'),
-(826, 91, 'jain ', 'jain'),
-(827, 91, ' musak', 'musak'),
-(828, 91, 'cklasjs', 'cklasjs'),
-(829, 91, 'lasdhkasjdh', 'lasdhkasjdh'),
-(830, 91, 'akjsjdh', 'akjsjdh'),
-(831, 91, 'asljkfdh ds', 'asljkfdh-ds'),
-(832, 91, 'adsf', 'adsf'),
-(833, 91, 'sadf', 'sadf'),
-(834, 91, 'ads', 'ads');
+(343, 68, 'storage ', 'storage');
 
 -- --------------------------------------------------------
 
@@ -18802,19 +18725,20 @@ CREATE TABLE `users` (
   `reward_system_enabled` tinyint(1) DEFAULT 0,
   `balance` double DEFAULT 0,
   `total_pageviews` int(11) DEFAULT 0,
-  `created_at` timestamp NULL DEFAULT current_timestamp()
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `password_reset` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `slug`, `email`, `email_status`, `token`, `password`, `role`, `user_type`, `google_id`, `facebook_id`, `vk_id`, `avatar`, `cover_image`, `status`, `about_me`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `vk_url`, `telegram_url`, `youtube_url`, `last_seen`, `show_email_on_profile`, `show_rss_feeds`, `reward_system_enabled`, `balance`, `total_pageviews`, `created_at`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', 1, '63e66377362986-58510705-11369503', '12345', 'admin', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-20 15:32:41', 1, 1, 0, 0, 0, '2023-02-10 15:32:07'),
-(2, 'Nikita Kapse', 'nikita-kapse', 'nikita@mponlinenews.com', 1, '63e673edee32c8-44567266-22394105', '$2y$10$EAatNYTwJu.nw1/eUTSFN./RMLt0NtZpfKIvNlGz2AyP3JRclD4Hi', 'author', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-20 13:46:57', 1, 1, 0, 0, 0, '2023-02-10 22:12:21'),
-(3, 'Leena Salve', 'leena-salve', 'Leena@mponlinenews.com', 1, '63e67418e52781-21957060-53397168', '$2y$10$a2fkbL9nATrXyh4WplqU1e7q7k2wLT1P/TcJh3vqUhddJknf7GLw6', 'author', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-17 16:23:19', 1, 1, 0, 0, 0, '2023-02-10 22:13:04'),
-(4, 'Praveen Tiwari', 'praveen-tiwari', 'admin@mponlinenews.com', 1, '63e6746e6acf98-39136975-18175433', '$2y$10$OY.lijzcLmaXF7r9Xfe4IONM1f./EbLPu45YpuwBKlpyGNIDcZwg.', 'admin', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-10 22:14:30', 1, 1, 0, 0, 0, '2023-02-10 22:14:30'),
-(5, 'XhWijZNu', 'xhwijznu', 'rutduyuzec@outlook.com', 0, '63eed5f5cd38a7-19492808-20005850', '$2y$10$LRuwIoUZzcuy6iypJKRCJuHfikXHsHGmo/TJVhdonDvBHvg5B/KSy', 'user', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-17 06:53:54', 1, 1, 0, 0, 0, '2023-02-17 06:48:45');
+INSERT INTO `users` (`id`, `username`, `slug`, `email`, `email_status`, `token`, `password`, `role`, `user_type`, `google_id`, `facebook_id`, `vk_id`, `avatar`, `cover_image`, `status`, `about_me`, `facebook_url`, `twitter_url`, `instagram_url`, `pinterest_url`, `linkedin_url`, `vk_url`, `telegram_url`, `youtube_url`, `last_seen`, `show_email_on_profile`, `show_rss_feeds`, `reward_system_enabled`, `balance`, `total_pageviews`, `created_at`, `password_reset`) VALUES
+(1, 'admin', 'admin', 'admin@gmail.com', 1, '38062f348def3ca61fde1114eb27fcf4', '$2y$10$XYTwYnSoNzxfRSz9rDbDl.cskBG3IHXGe67np6w8fBz.ltSExyvtO', 'admin', 'registered', NULL, NULL, NULL, '1680785024929_250x250.jpeg', '1680785024978_250x250.jpeg', 1, 'hello', 'facebook.com', 'sad', '', '', '', '', '', '', '2023-02-20 15:32:41', 1, 1, 0, 0, 0, '2023-02-10 15:32:07', ''),
+(2, 'Nikita Kapse', 'nikita-kapse', 'nikita@mponlinenews.com', 1, '63e673edee32c8-44567266-22394105', '$2y$10$XYTwYnSoNzxfRSz9rDbDl.cskBG3IHXGe67np6w8fBz.ltSExyvtO', 'author', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-20 13:46:57', 1, 1, 0, 0, 0, '2023-02-10 22:12:21', ''),
+(3, 'Leena Salve', 'leena-salve', 'Leena@mponlinenews.com', 1, '63e67418e52781-21957060-53397168', '$2y$10$a2fkbL9nATrXyh4WplqU1e7q7k2wLT1P/TcJh3vqUhddJknf7GLw6', 'author', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-17 16:23:19', 1, 1, 0, 0, 0, '2023-02-10 22:13:04', ''),
+(4, 'Praveen Tiwari', 'praveen-tiwari', 'admin@mponlinenews.com', 1, '63e6746e6acf98-39136975-18175433', '$2y$10$OY.lijzcLmaXF7r9Xfe4IONM1f./EbLPu45YpuwBKlpyGNIDcZwg.', 'admin', 'registered', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-10 22:14:30', 1, 1, 0, 0, 0, '2023-02-10 22:14:30', ''),
+(6, 'Muskan jain', 'muskaan-jain', 'muskaanrashujain@gmail.com', 0, '3551131a87b2bf210beb60250a92d2ed', '$2y$10$palV40Kmau43OIb436.gn.5ocLoD4PzoSJr5q1GkrzSgnRPW/TbT.', 'user', 'registered', NULL, NULL, NULL, '1680885809392_250x250.jpeg', '1680885809495_800x400.jpeg', 0, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 0, 0, 0, '2023-04-06 07:53:04', 'a392b7586321dd92355b5051a61337d0');
 
 -- --------------------------------------------------------
 
@@ -19202,13 +19126,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -19220,7 +19144,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT for table `followers`
 --
 ALTER TABLE `followers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `fonts`
@@ -19328,7 +19252,7 @@ ALTER TABLE `post_images`
 -- AUTO_INCREMENT for table `post_pageviews_month`
 --
 ALTER TABLE `post_pageviews_month`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `post_sorted_list_items`
@@ -19364,7 +19288,7 @@ ALTER TABLE `quiz_results`
 -- AUTO_INCREMENT for table `reactions`
 --
 ALTER TABLE `reactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `reading_lists`
@@ -19418,7 +19342,7 @@ ALTER TABLE `themes`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_payout_accounts`

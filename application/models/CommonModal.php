@@ -218,6 +218,19 @@ class CommonModal extends CI_Model
       return false;
     }
   }
+  function getAllDataWithLimitInOrder($table, $where, $start, $end)
+  {
+    $get = $this->db->select()
+      ->from($table)
+      ->where($where)
+      ->limit($start, $end)
+      ->get();
+    if ($get->num_rows() > 0) {
+      return $get->result_array();
+    } else {
+      return false;
+    }
+  }
 
   public function runQuery($query)
   {
@@ -251,6 +264,21 @@ class CommonModal extends CI_Model
       ->from($table)
       ->where($where)
       ->group_by($groupColumn)
+      ->get();
+    if ($get->num_rows() > 0) {
+      return $get->result_array();
+    } else {
+      return false;
+    }
+  }
+
+  public function getRowGroupwithlimit($table, $groupColumn, $limit)
+  {
+    $get = $this->db
+      ->select()
+      ->from($table)
+      ->group_by($groupColumn)
+      ->limit($limit)
       ->get();
     if ($get->num_rows() > 0) {
       return $get->result_array();
