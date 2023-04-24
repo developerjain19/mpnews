@@ -88,7 +88,7 @@ class POSTController extends CI_Controller
                         'type' => $_FILES["moreimage"]["type"][$i],
                         'tmp_name' => $_FILES["moreimage"]["tmp_name"][$i],
                         'error' => $_FILES["moreimage"]["error"][$i],
-                        'size' => $_FILES["moreimage"]["size"][$i],
+                        'size' => $_FILES["moreimage"]["size"][$i sta],
                     );
                     $image_big1 = imageUploadWithRatio('multiimages',  $location, '870', '580');
 
