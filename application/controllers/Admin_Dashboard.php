@@ -18,20 +18,19 @@ class Admin_Dashboard extends CI_Controller
 
     public function index()
     {
+
         $data['title'] = "Home";
+        
+        $data['category'] = $this->CommonModal->getNumRow('categories');
 
-        $data['category'] = $this->CommonModal->getNumRow('category');
-      if(sessionId('role') =='admin'){
-        $data['allpost'] = $this->CommonModal->getNumRow('posts');
-      }
-      else
-      {
-        $data['allpost'] = $this->CommonModal->getNumRows('posts', array('user_id' => sessionId('id')));
-
-      }
+        if (sessionId('role') == 'admin') {
+            $data['allpost'] = $this->CommonModal->getNumRow('posts');
+        } else {
+            $data['allpost'] = $this->CommonModal->getNumRows('posts', array('user_id' => sessionId('id')));
+        }
 
 
-      
+
         $this->load->view('admin/dashboard', $data);
     }
 

@@ -32,8 +32,7 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <?php $this->load->view('admin/post/left-side-postinfo'); ?>
-                                <?php $this->load->view('admin/post/left-side-images'); ?>
-
+                                <?php $this->load->view('admin/post/left-side-content'); ?>
                             </div>
 
                             <div class="col-md-4">
