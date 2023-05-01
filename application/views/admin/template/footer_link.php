@@ -23,7 +23,7 @@
 <script src="<?= base_url() ?>assets/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script>
-    $('#summernote').summernote();
+    $('.summernote').summernote();
 
     if ($("#cb_scheduled").prop('checked') === true) {
 

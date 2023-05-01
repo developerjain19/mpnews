@@ -88,7 +88,7 @@ class POSTController extends CI_Controller
                         'type' => $_FILES["moreimage"]["type"][$i],
                         'tmp_name' => $_FILES["moreimage"]["tmp_name"][$i],
                         'error' => $_FILES["moreimage"]["error"][$i],
-                        'size' => $_FILES["moreimage"]["size"][$i sta],
+                        'size' => $_FILES["moreimage"]["size"][$i],
                     );
                     $image_big1 = imageUploadWithRatio('multiimages',  $location, '870', '580');
 
@@ -127,7 +127,13 @@ class POSTController extends CI_Controller
         $data['title'] = $title;
         $data['postType'] = $type;
 
-        $this->load->view('admin/post/add-post', $data);
+        if ($type === 'article') {
+            $this->load->view('admin/post/add-post', $data);
+        } else if ($type === 'gallery') {
+            $this->load->view('admin/post/add-gallery', $data);
+        }else if($type === 'video'){
+            $this->load->view('admin/post/add-video', $data);
+        }
     }
 
 

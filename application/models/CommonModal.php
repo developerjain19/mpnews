@@ -320,6 +320,15 @@ class CommonModal extends CI_Model
     return $this->db->where($where)->delete($table);
   }
 
+  public function getNumRow($table)
+	{
+		$ci = &get_instance();
+		$get = $ci->db->select()
+			->from($table)
+			->get();
+		return $get->num_rows();
+	}
+
   public function getNumRows($table, $where)
   {
     $ci = &get_instance();
